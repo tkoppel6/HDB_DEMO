@@ -1,0 +1,28 @@
+_schema-version: 2.0
+ID: MICRON_XSA_POC
+description: 
+version: 1.2.1
+
+modules:
+  - name: HDB_TEST
+    type: hdb
+    path: HDB_TEST
+    requires:
+      - name: hdi-container
+        properties:
+            TARGET_CONTAINER: ~{service-name}
+      - name: CROSS_SCHEMA_SFLIGHTT
+
+
+resources:
+  - name: hdi-container
+    parameters:
+      config:
+        schema: MICRON
+    type: com.sap.xs.hdi-container
+    properties:
+        service-name: ${service-name}
+  - name: CROSS_SCHEMA_SFLIGHTT
+    type: org.cloudfoundry.existing-service
+    parameters:
+        service-name: CROSS_SCHEMA_SFLIGHTT
