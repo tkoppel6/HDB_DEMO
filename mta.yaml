@@ -11,6 +11,7 @@ modules:
       - name: hdi-container
         properties:
             TARGET_CONTAINER: ~{service-name}
+
       - name: sflight-grantor2
 
 
@@ -26,3 +27,6 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
         service-name: sflight-grantor2
+
+     
+
