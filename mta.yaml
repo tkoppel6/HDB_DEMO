@@ -1,8 +1,7 @@
 _schema-version: 2.0
-ID: MICRON_XSA_POC
-description: 
+ID: HDB_TEST
+description: HDB_TEST
 version: 1.2.1
-
 modules:
   - name: HDB_TEST
     type: hdb
@@ -10,19 +9,17 @@ modules:
     requires:
       - name: hdi-container
         properties:
-            TARGET_CONTAINER: ~{service-name}
-      - name: sflight-grantor2
-
-
+          TARGET_CONTAINER: '~{service-name}'
+      - name: SFLIGHT_1
 resources:
   - name: hdi-container
     parameters:
       config:
-        schema: MICRON
+        schema: SFLIGHT_1
     type: com.sap.xs.hdi-container
     properties:
-        service-name: ${service-name}
-  - name: sflight-grantor2
+      service-name: '${service-name}'
+  - name: SFLIGHT_1
     type: org.cloudfoundry.existing-service
     parameters:
-        service-name: sflight-grantor2
+      service-name: SFLIGHT_1
