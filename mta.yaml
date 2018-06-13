@@ -15,7 +15,7 @@ resources:
   - name: hdi-container
     parameters:
       config:
-        schema: SFLIGHT_1
+        schema: HDB_TEST_1
     type: com.sap.xs.hdi-container
     properties:
       service-name: '${service-name}'
