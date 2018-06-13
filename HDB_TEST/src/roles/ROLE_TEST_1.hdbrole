@@ -1,0 +1,11 @@
+{
+	"role":{
+		"name": "ROLE_TEST_1",
+        	"object_privileges":[
+			{
+				"name": "CV_SBOOK",
+				"type": "VIEW",
+				"privileges": [ "SELECT" ]
+			}
+      }
+}
